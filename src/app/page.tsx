@@ -319,6 +319,42 @@ function PackageCarouselRow({ pkgCat, index, waLink, fadeInUp }: any) {
         </motion.div>
       </section>
 
+      {/* Profile / Tentang Saya Section */}
+      <section id="profil" className="w-full py-16 px-6 bg-white">
+        <motion.div 
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, margin: "-100px" }}
+          variants={fadeInUp}
+          className="max-w-5xl mx-auto bg-gray-50 rounded-[2rem] p-8 md:p-12 border border-gray-100 flex flex-col md:flex-row items-center gap-8 md:gap-12 shadow-sm"
+        >
+          <div className="w-32 h-32 md:w-48 md:h-48 shrink-0 rounded-full overflow-hidden border-4 border-white shadow-md bg-red-50 flex items-end justify-center">
+            {/* Menggunakan object-top atau custom position agar wajahnya pas di lingkaran */}
+            <img src="/dummy-dad.png" alt="Ajat Sudrajat" className="w-full h-auto object-cover object-top" />
+          </div>
+          <div className="flex-1 text-center md:text-left">
+            <div className="inline-flex items-center gap-1.5 bg-red-50 text-primary px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wider mb-4 border border-red-100">
+              <ShieldCheck className="w-4 h-4" />
+              Agen Terpercaya
+            </div>
+            <h2 className="text-2xl md:text-4xl font-black text-text-main mb-2 tracking-tight">Ajat Sudrajat</h2>
+            <p className="text-text-muted leading-relaxed mb-6 text-base md:text-lg">
+              Halo! Saya adalah <b className="text-text-main">Senior Sales Force IndiHome</b> dengan pengalaman lebih dari <b className="text-primary">5 Tahun</b> (Placeholder) melayani pendaftaran dan pemasangan WiFi baru di area Tasikmalaya dan sekitarnya. Misi saya sederhana: membantu Anda mendapatkan koneksi internet terbaik tanpa proses yang berbelit-belit.
+            </p>
+            <div className="flex flex-wrap justify-center md:justify-start gap-4">
+               <div className="bg-white px-5 py-3 rounded-xl border border-gray-100 shadow-sm flex flex-col items-center md:items-start">
+                 <span className="block text-2xl font-black text-text-main">5+ Tahun</span>
+                 <span className="block text-xs text-text-muted font-medium mt-0.5">Pengalaman Sales</span>
+               </div>
+               <div className="bg-white px-5 py-3 rounded-xl border border-gray-100 shadow-sm flex flex-col items-center md:items-start">
+                 <span className="block text-2xl font-black text-text-main">1000+</span>
+                 <span className="block text-xs text-text-muted font-medium mt-0.5">Pelanggan Terpasang</span>
+               </div>
+            </div>
+          </div>
+        </motion.div>
+      </section>
+
       {/* Packages Section */}
       <section id="packages" className="w-full py-20 px-6 bg-white">
         <div className="max-w-7xl mx-auto">
