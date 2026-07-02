@@ -3,7 +3,7 @@
 import { useState } from "react";
 import { Wifi, Tv, Phone, CheckCircle2, MessageCircle, ShieldCheck, Zap, Clock, Menu, X, ChevronDown, MonitorSmartphone, FileText, Wrench, MapPin } from "lucide-react";
 import { motion } from "framer-motion";
-
+import Image from "next/image";
 export default function Home() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [openFaq, setOpenFaq] = useState<number | null>(null);
@@ -302,9 +302,12 @@ function PackageCarouselRow({ pkgCat, index, waLink, fadeInUp }: any) {
 
               {/* Center Image (The Cutout) */}
               <motion.div variants={fadeInUp} className="w-full md:w-1/2 lg:w-1/3 h-[350px] md:h-[80%] relative md:absolute bottom-0 md:left-1/2 md:-translate-x-1/2 flex items-end justify-center pointer-events-none z-10 mt-auto md:mt-0">
-                <img 
+                <Image 
                   src="/dummy-dad.png" 
                   alt="Ajat Sudrajat" 
+                  width={600}
+                  height={800}
+                  priority={true}
                   className="w-auto h-full max-h-[650px] object-cover object-bottom drop-shadow-2xl"
                 />
               </motion.div>
