@@ -332,26 +332,21 @@ function PackageCarouselRow({ pkgCat, index, waLink, fadeInUp }: any) {
           whileInView="visible"
           viewport={{ once: true, margin: "-100px" }}
           variants={fadeInUp}
-          className="max-w-5xl mx-auto flex flex-col md:flex-row items-center gap-8 md:gap-16"
+          className="max-w-4xl mx-auto flex flex-col text-center"
         >
-          <div className="w-40 h-40 md:w-56 md:h-56 shrink-0 rounded-full overflow-hidden bg-gray-50 flex items-end justify-center">
-            <img src="/dummy-dad.png" alt="Ajat Sudrajat" className="w-full h-auto object-cover object-top" />
-          </div>
-          <div className="flex-1 text-center md:text-left">
-            <h2 className="text-3xl md:text-5xl font-black text-text-main mb-4 tracking-tight">Ajat Sudrajat</h2>
-            <p className="text-text-muted leading-relaxed mb-8 text-lg">
-              Halo! Saya adalah <b className="text-text-main">Senior Sales Force IndiHome</b> dengan pengalaman lebih dari <b className="text-primary">5 Tahun</b> (Placeholder) melayani pendaftaran dan pemasangan WiFi baru di area Tasikmalaya dan sekitarnya. Misi saya sederhana: membantu Anda mendapatkan koneksi internet terbaik tanpa proses yang berbelit-belit.
-            </p>
-            <div className="flex flex-wrap justify-center md:justify-start gap-12 md:gap-16">
-               <div className="flex flex-col items-center md:items-start">
-                 <span className="block text-3xl md:text-4xl font-black text-text-main">5+ Tahun</span>
-                 <span className="block text-sm text-text-muted font-medium mt-1 uppercase tracking-wide">Pengalaman</span>
-               </div>
-               <div className="flex flex-col items-center md:items-start">
-                 <span className="block text-3xl md:text-4xl font-black text-text-main">1000+</span>
-                 <span className="block text-sm text-text-muted font-medium mt-1 uppercase tracking-wide">Pelanggan Aktif</span>
-               </div>
-            </div>
+          <h2 className="text-2xl md:text-3xl font-black text-text-main mb-6 tracking-tight">Kredibilitas & Pengalaman</h2>
+          <p className="text-text-muted leading-relaxed mb-10 text-lg md:text-xl">
+            Sebagai <b className="text-text-main">Senior Sales Force IndiHome</b>, saya memiliki pengalaman lebih dari <b className="text-primary">5 Tahun</b> (Placeholder) melayani pendaftaran dan pemasangan WiFi baru di area Kabupaten Tasikmalaya dan sekitarnya. Misi saya sederhana: memastikan Anda mendapatkan layanan internet terbaik secara resmi, aman, dan tanpa proses yang berbelit-belit.
+          </p>
+          <div className="flex flex-wrap justify-center gap-16 md:gap-32">
+             <div className="flex flex-col items-center">
+               <span className="block text-4xl md:text-5xl font-black text-text-main">5+</span>
+               <span className="block text-sm md:text-base text-text-muted font-medium mt-2 uppercase tracking-widest">Tahun Pengalaman</span>
+             </div>
+             <div className="flex flex-col items-center">
+               <span className="block text-4xl md:text-5xl font-black text-text-main">1000+</span>
+               <span className="block text-sm md:text-base text-text-muted font-medium mt-2 uppercase tracking-widest">Pelanggan Aktif</span>
+             </div>
           </div>
         </motion.div>
       </section>
