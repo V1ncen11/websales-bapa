@@ -95,6 +95,20 @@ export default function Home() {
   ];
 
 function PackageCarouselRow({ pkgCat, index, waLink, fadeInUp }: any) {
+  const [activeIndex, setActiveIndex] = useState(index === 0 ? 1 : 0);
+
+  const handleScroll = (e: React.UIEvent<HTMLDivElement>) => {
+    const container = e.currentTarget;
+    const scrollPosition = container.scrollLeft;
+    const itemWidth = container.children[0] ? container.children[0].clientWidth + 16 : 300;
+    const newIndex = Math.round(scrollPosition / itemWidth);
+    
+    const safeIndex = Math.max(0, Math.min(newIndex, pkgCat.items.length - 1));
+    if (safeIndex !== activeIndex) {
+      setActiveIndex(safeIndex);
+    }
+  };
+
   return (
     <div className="flex flex-col">
       {/* Category Header */}
@@ -111,7 +125,8 @@ function PackageCarouselRow({ pkgCat, index, waLink, fadeInUp }: any) {
       {/* Category Carousel */}
       <motion.div 
         variants={fadeInUp} 
-        className="flex overflow-x-auto py-6 -mx-6 px-6 md:mx-0 md:px-0 gap-4 snap-x snap-mandatory items-stretch pb-8"
+        className="flex overflow-x-auto md:grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 py-6 -mx-6 px-6 md:mx-0 md:px-0 gap-4 snap-x snap-mandatory md:snap-none items-stretch pb-4 scrollbar-hide"
+        onScroll={handleScroll}
       >
          {pkgCat.items.map((item: any, i: number) => {
             const isBestSeller = index === 0 && i === 1;
@@ -119,7 +134,7 @@ function PackageCarouselRow({ pkgCat, index, waLink, fadeInUp }: any) {
             return (
                <div 
                  key={i} 
-                 className={`min-w-[200px] w-[60vw] md:w-[230px] flex-shrink-0 snap-always snap-center rounded-[1.2rem] p-5 relative flex flex-col transition-all duration-300 h-full bg-white cursor-default shadow-sm ring-1 ring-gray-200 hover:scale-[1.03] hover:shadow-lg hover:shadow-red-500/15 hover:ring-2 hover:ring-primary hover:z-10 ${
+                 className={`min-w-[200px] w-[65vw] md:w-full flex-shrink-0 snap-always snap-center rounded-[1.2rem] p-5 relative flex flex-col transition-all duration-300 h-full bg-white cursor-default shadow-sm ring-1 ring-gray-200 hover:scale-[1.03] hover:shadow-lg hover:shadow-red-500/15 hover:ring-2 hover:ring-primary hover:z-10 ${
                  isBestSeller ? 'ring-2 ring-primary/30 shadow-red-500/5' : ''
                }`}>
                   {isBestSeller && (
@@ -178,6 +193,15 @@ function PackageCarouselRow({ pkgCat, index, waLink, fadeInUp }: any) {
          })}
       </motion.div>
 
+      {/* Mobile Pagination Dots */}
+      <div className="flex md:hidden justify-center items-center gap-1.5 mt-2 mb-4">
+         {pkgCat.items.map((_: any, i: number) => (
+            <div 
+              key={i} 
+              className={`h-1.5 rounded-full transition-all duration-300 ${i === activeIndex ? 'w-5 bg-primary' : 'w-1.5 bg-gray-200'}`} 
+            />
+         ))}
+      </div>
     </div>
   );
 }
