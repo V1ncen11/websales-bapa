@@ -95,21 +95,6 @@ export default function Home() {
   ];
 
 function PackageCarouselRow({ pkgCat, index, waLink, fadeInUp }: any) {
-  const [activeIndex, setActiveIndex] = useState(index === 0 ? 1 : 0);
-
-  const handleScroll = (e: React.UIEvent<HTMLDivElement>) => {
-    const container = e.currentTarget;
-    const scrollPosition = container.scrollLeft;
-    // Each card has min-w-[260px] or w-[75vw], plus gap-6 (24px)
-    // We can just use the first child's clientWidth as an approximation
-    const itemWidth = container.children[0] ? container.children[0].clientWidth + 24 : 300;
-    const newIndex = Math.round(scrollPosition / itemWidth);
-    
-    // Ensure index doesn't go out of bounds due to overscroll
-    const safeIndex = Math.max(0, Math.min(newIndex, pkgCat.items.length - 1));
-    setActiveIndex(safeIndex);
-  };
-
   return (
     <div className="flex flex-col">
       {/* Category Header */}
@@ -127,20 +112,15 @@ function PackageCarouselRow({ pkgCat, index, waLink, fadeInUp }: any) {
       <motion.div 
         variants={fadeInUp} 
         className="flex overflow-x-auto py-4 -mx-6 px-6 md:mx-0 md:px-0 gap-6 snap-x snap-mandatory scrollbar-hide items-stretch"
-        onScroll={handleScroll}
       >
          {pkgCat.items.map((item: any, i: number) => {
             const isBestSeller = index === 0 && i === 1;
-            const isActive = i === activeIndex;
 
             return (
                <div 
                  key={i} 
-                 onMouseEnter={() => setActiveIndex(i)}
-                 className={`min-w-[240px] w-[70vw] md:w-[260px] flex-shrink-0 snap-center rounded-[1.5rem] p-6 relative flex flex-col transition-all duration-500 ease-out h-full bg-white cursor-pointer will-change-transform ${
-                 isActive 
-                   ? 'scale-[1.03] md:scale-105 shadow-2xl shadow-red-500/15 ring-2 ring-primary z-10' 
-                   : 'scale-95 md:scale-100 shadow-md ring-1 ring-gray-200 opacity-80 md:opacity-100 hover:shadow-xl hover:ring-red-200 z-0'
+                 className={`min-w-[240px] w-[70vw] md:w-[260px] flex-shrink-0 snap-center rounded-[1.5rem] p-6 relative flex flex-col transition-all duration-300 h-full bg-white cursor-default shadow-md ring-1 ring-gray-200 hover:scale-105 hover:shadow-xl hover:shadow-red-500/15 hover:ring-2 hover:ring-primary hover:z-10 ${
+                 isBestSeller ? 'ring-2 ring-primary/30 shadow-red-500/5' : ''
                }`}>
                   {isBestSeller && (
                     <div className="absolute -top-4 left-1/2 -translate-x-1/2 bg-gradient-to-r from-primary to-red-600 text-white text-[10px] font-black px-4 py-1.5 rounded-full uppercase tracking-widest shadow-lg shadow-red-500/40 whitespace-nowrap">
@@ -149,8 +129,8 @@ function PackageCarouselRow({ pkgCat, index, waLink, fadeInUp }: any) {
                   )}
                   
                   {item.note ? (
-                    <span className={`text-[10px] font-bold px-2.5 py-1 rounded-full w-max mb-5 border transition-colors duration-500 ${
-                      isActive ? 'bg-primary text-white border-primary shadow-md shadow-red-500/30' : 'bg-red-50 text-primary border-red-100'
+                    <span className={`text-[10px] font-bold px-2.5 py-1 rounded-full w-max mb-5 border transition-colors duration-300 ${
+                      isBestSeller ? 'bg-primary text-white border-primary shadow-md shadow-red-500/30' : 'bg-red-50 text-primary border-red-100'
                     }`}>
                       {item.note}
                     </span>
@@ -159,10 +139,10 @@ function PackageCarouselRow({ pkgCat, index, waLink, fadeInUp }: any) {
                   )}
                   
                   <div className="flex items-center gap-3 mb-2">
-                    <div className={`w-11 h-11 rounded-full flex items-center justify-center shrink-0 transition-colors duration-500 ${
-                      isActive ? 'bg-primary text-white shadow-md shadow-red-500/30' : 'bg-red-50 text-primary'
+                    <div className={`w-11 h-11 rounded-full flex items-center justify-center shrink-0 transition-colors duration-300 ${
+                      isBestSeller ? 'bg-primary text-white shadow-md shadow-red-500/30' : 'bg-red-50 text-primary'
                     }`}>
-                      <Wifi className={`w-5 h-5 ${isActive ? 'text-white' : 'text-primary'}`} />
+                      <Wifi className={`w-5 h-5 ${isBestSeller ? 'text-white' : 'text-primary'}`} />
                     </div>
                     <span className="text-3xl font-black tracking-tight text-text-main">
                       {item.speed}
@@ -185,16 +165,11 @@ function PackageCarouselRow({ pkgCat, index, waLink, fadeInUp }: any) {
                     </div>
                   </div>
 
-                  <a 
-                    href={waLink} 
-                    target="_blank" 
-                    rel="noreferrer" 
-                    className={`group mt-auto w-full py-3.5 rounded-xl text-sm font-bold flex justify-center items-center transition-all duration-300 ${
-                      isActive 
-                        ? 'bg-primary text-white shadow-lg shadow-red-500/30 hover:bg-red-600' 
-                        : 'bg-red-50 text-primary hover:bg-primary hover:text-white'
-                    }`}
-                  >
+                  <a href={waLink} target="_blank" rel="noreferrer" className={`mt-6 w-full py-3 px-4 rounded-xl font-bold flex items-center justify-center gap-2 transition-all duration-300 shadow-md ${
+                    isBestSeller
+                      ? 'bg-primary text-white hover:bg-red-600 hover:shadow-red-500/25 active:scale-95' 
+                      : 'bg-white text-primary border-2 border-primary hover:bg-red-50 active:scale-95'
+                  }`}>
                     <span className="group-hover:hidden">Pilih {item.speed}</span>
                     <span className="hidden group-hover:inline-flex items-center gap-1">Daftar Sekarang &rarr;</span>
                   </a>
@@ -203,15 +178,6 @@ function PackageCarouselRow({ pkgCat, index, waLink, fadeInUp }: any) {
          })}
       </motion.div>
 
-      {/* Mobile Pagination Dots */}
-      <div className="flex md:hidden justify-center items-center gap-1.5 mt-2">
-         {pkgCat.items.map((_: any, i: number) => (
-            <div 
-              key={i} 
-              className={`h-1.5 rounded-full transition-all duration-300 ${i === activeIndex ? 'w-5 bg-primary' : 'w-1.5 bg-gray-200'}`} 
-            />
-         ))}
-      </div>
     </div>
   );
 }
