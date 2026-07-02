@@ -589,9 +589,11 @@ function PackageCarouselRow({ pkgCat, index, waLink, fadeInUp }: any) {
         <div className="max-w-5xl mx-auto flex flex-col md:flex-row justify-between gap-12 md:gap-8 mb-12">
           {/* Left: Profile & Contact */}
           <div className="flex flex-col items-center md:items-start flex-1">
-            <h2 className="text-2xl font-black text-text-main mb-1 tracking-tight">Ajat Sudrajat</h2>
-            <p className="text-text-muted font-medium mb-1 text-center md:text-left">Sales Force Resmi Telkomsel IndiHome</p>
-            <p className="text-sm font-bold text-text-main opacity-70 mb-8">ID Sales: SF-XXXXXX</p>
+            <div className="mb-6 text-center md:text-left">
+              <span className="block text-lg font-bold text-text-main tracking-tight">Ajat Sudrajat</span>
+              <span className="block text-sm text-text-muted mt-0.5">Sales Force Resmi Telkomsel IndiHome</span>
+              <span className="block text-xs font-medium text-gray-400 mt-1">ID Sales: SF-XXXXXX</span>
+            </div>
             
             <div className="flex flex-col gap-3 w-full max-w-[280px]">
               <a href={waLink} target="_blank" rel="noreferrer" className="flex items-center justify-center md:justify-start gap-3 bg-red-50 hover:bg-primary hover:text-white text-primary px-5 py-3.5 rounded-xl transition-all duration-300 group">
