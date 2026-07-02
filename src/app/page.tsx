@@ -234,7 +234,7 @@ function PackageCarouselRow({ pkgCat, index, waLink, fadeInUp }: any) {
       )}
 
       {/* Hero Section */}
-      <section className="relative w-full h-screen min-h-[650px] max-h-[850px] pt-20 overflow-hidden bg-gradient-to-b from-white to-red-50/50 border-b border-red-50 flex flex-col">
+      <section className="relative w-full min-h-[100svh] md:h-screen md:max-h-[850px] pt-32 md:pt-20 pb-16 md:pb-0 overflow-hidden bg-gradient-to-b from-white to-red-50/50 border-b border-red-50 flex flex-col">
         {/* Background Grid Pattern (Removed as requested) */}
         {/* <div className="absolute inset-0 bg-[linear-gradient(to_right,#e5e7eb_1px,transparent_1px),linear-gradient(to_bottom,#e5e7eb_1px,transparent_1px)] bg-[size:64px_64px]"></div> */}
         
@@ -247,7 +247,7 @@ function PackageCarouselRow({ pkgCat, index, waLink, fadeInUp }: any) {
           initial="hidden"
           animate="visible"
           variants={staggerContainer}
-          className="relative z-10 max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between flex-grow w-full px-6 pb-12 md:pb-0 gap-8 md:gap-0"
+          className="relative z-10 max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between flex-grow w-full px-6 gap-8 md:gap-0"
         >
               
               {/* Left Content */}
