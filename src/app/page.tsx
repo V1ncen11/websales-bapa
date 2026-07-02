@@ -137,10 +137,10 @@ function PackageCarouselRow({ pkgCat, index, waLink, fadeInUp }: any) {
                <div 
                  key={i} 
                  onMouseEnter={() => setActiveIndex(i)}
-                 className={`min-w-[240px] w-[70vw] md:w-[260px] flex-shrink-0 snap-center rounded-[1.5rem] p-6 relative flex flex-col transition-all duration-500 h-full bg-white cursor-pointer ${
+                 className={`min-w-[240px] w-[70vw] md:w-[260px] flex-shrink-0 snap-center rounded-[1.5rem] p-6 relative flex flex-col transition-all duration-500 ease-out h-full bg-white cursor-pointer will-change-transform ${
                  isActive 
-                   ? 'scale-[1.03] md:scale-105 shadow-2xl shadow-red-500/15 border-2 border-primary z-10' 
-                   : 'scale-95 md:scale-100 shadow-md border border-gray-100 opacity-80 md:opacity-100 hover:shadow-xl hover:border-red-200 z-0'
+                   ? 'scale-[1.03] md:scale-105 shadow-2xl shadow-red-500/15 ring-2 ring-primary z-10' 
+                   : 'scale-95 md:scale-100 shadow-md ring-1 ring-gray-200 opacity-80 md:opacity-100 hover:shadow-xl hover:ring-red-200 z-0'
                }`}>
                   {isBestSeller && (
                     <div className="absolute -top-4 left-1/2 -translate-x-1/2 bg-gradient-to-r from-primary to-red-600 text-white text-[10px] font-black px-4 py-1.5 rounded-full uppercase tracking-widest shadow-lg shadow-red-500/40 whitespace-nowrap">
