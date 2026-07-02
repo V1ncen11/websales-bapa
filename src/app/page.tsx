@@ -335,19 +335,9 @@ function PackageCarouselRow({ pkgCat, index, waLink, fadeInUp }: any) {
           className="max-w-4xl mx-auto flex flex-col text-center"
         >
           <h2 className="text-2xl md:text-3xl font-black text-text-main mb-6 tracking-tight">Kredibilitas & Pengalaman</h2>
-          <p className="text-text-muted leading-relaxed mb-10 text-lg md:text-xl">
-            Sebagai <b className="text-text-main">Senior Sales Force IndiHome</b>, saya memiliki pengalaman lebih dari <b className="text-primary">5 Tahun</b> (Placeholder) melayani pendaftaran dan pemasangan WiFi baru di area Kabupaten Tasikmalaya dan sekitarnya. Misi saya sederhana: memastikan Anda mendapatkan layanan internet terbaik secara resmi, aman, dan tanpa proses yang berbelit-belit.
+          <p className="text-text-muted leading-relaxed text-lg md:text-xl">
+            Sebagai <b className="text-text-main">Senior Sales Force IndiHome</b>, saya memiliki pengalaman lebih dari <b className="text-primary">5 Tahun</b> melayani pendaftaran dan pemasangan WiFi baru di area Kabupaten Tasikmalaya dan sekitarnya. Misi saya sederhana: memastikan Anda mendapatkan layanan internet terbaik secara resmi, aman, dan tanpa proses yang berbelit-belit.
           </p>
-          <div className="flex flex-wrap justify-center gap-16 md:gap-32">
-             <div className="flex flex-col items-center">
-               <span className="block text-4xl md:text-5xl font-black text-text-main">5+</span>
-               <span className="block text-sm md:text-base text-text-muted font-medium mt-2 uppercase tracking-widest">Tahun Pengalaman</span>
-             </div>
-             <div className="flex flex-col items-center">
-               <span className="block text-4xl md:text-5xl font-black text-text-main">1000+</span>
-               <span className="block text-sm md:text-base text-text-muted font-medium mt-2 uppercase tracking-widest">Pelanggan Aktif</span>
-             </div>
-          </div>
         </motion.div>
       </section>
 
