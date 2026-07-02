@@ -592,7 +592,6 @@ function PackageCarouselRow({ pkgCat, index, waLink, fadeInUp }: any) {
             <div className="mb-6 text-center md:text-left">
               <span className="block text-lg font-bold text-text-main tracking-tight">Ajat Sudrajat</span>
               <span className="block text-sm text-text-muted mt-0.5">Sales Force Resmi Telkomsel IndiHome</span>
-              <span className="block text-xs font-medium text-gray-400 mt-1">ID Sales: SF-XXXXXX</span>
             </div>
             
             <div className="flex flex-col gap-3 w-full max-w-[280px]">
