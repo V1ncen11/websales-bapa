@@ -111,7 +111,7 @@ function PackageCarouselRow({ pkgCat, index, waLink, fadeInUp }: any) {
       {/* Category Carousel */}
       <motion.div 
         variants={fadeInUp} 
-        className="flex overflow-x-auto py-4 -mx-6 px-6 md:mx-0 md:px-0 gap-6 snap-x snap-mandatory scrollbar-hide items-stretch"
+        className="flex overflow-x-auto py-6 -mx-6 px-6 md:mx-0 md:px-0 gap-4 snap-x snap-mandatory items-stretch pb-8"
       >
          {pkgCat.items.map((item: any, i: number) => {
             const isBestSeller = index === 0 && i === 1;
@@ -119,7 +119,7 @@ function PackageCarouselRow({ pkgCat, index, waLink, fadeInUp }: any) {
             return (
                <div 
                  key={i} 
-                 className={`min-w-[240px] w-[70vw] md:w-[260px] flex-shrink-0 snap-center rounded-[1.5rem] p-6 relative flex flex-col transition-all duration-300 h-full bg-white cursor-default shadow-md ring-1 ring-gray-200 hover:scale-105 hover:shadow-xl hover:shadow-red-500/15 hover:ring-2 hover:ring-primary hover:z-10 ${
+                 className={`min-w-[200px] w-[60vw] md:w-[230px] flex-shrink-0 snap-always snap-center rounded-[1.2rem] p-5 relative flex flex-col transition-all duration-300 h-full bg-white cursor-default shadow-sm ring-1 ring-gray-200 hover:scale-[1.03] hover:shadow-lg hover:shadow-red-500/15 hover:ring-2 hover:ring-primary hover:z-10 ${
                  isBestSeller ? 'ring-2 ring-primary/30 shadow-red-500/5' : ''
                }`}>
                   {isBestSeller && (
@@ -138,13 +138,13 @@ function PackageCarouselRow({ pkgCat, index, waLink, fadeInUp }: any) {
                     <div className="h-5 mb-5"></div>
                   )}
                   
-                  <div className="flex items-center gap-3 mb-2">
-                    <div className={`w-11 h-11 rounded-full flex items-center justify-center shrink-0 transition-colors duration-300 ${
-                      isBestSeller ? 'bg-primary text-white shadow-md shadow-red-500/30' : 'bg-red-50 text-primary'
+                  <div className="flex items-center gap-2 mb-2">
+                    <div className={`w-9 h-9 rounded-full flex items-center justify-center shrink-0 transition-colors duration-300 ${
+                      isBestSeller ? 'bg-primary text-white shadow-sm shadow-red-500/30' : 'bg-red-50 text-primary'
                     }`}>
-                      <Wifi className={`w-5 h-5 ${isBestSeller ? 'text-white' : 'text-primary'}`} />
+                      <Wifi className={`w-4 h-4 ${isBestSeller ? 'text-white' : 'text-primary'}`} />
                     </div>
-                    <span className="text-3xl font-black tracking-tight text-text-main">
+                    <span className="text-2xl font-black tracking-tight text-text-main">
                       {item.speed}
                     </span>
                   </div>
@@ -154,18 +154,18 @@ function PackageCarouselRow({ pkgCat, index, waLink, fadeInUp }: any) {
                     <span>Ideal untuk {item.devices}</span>
                   </div>
                   
-                  <div className="mt-5 mb-6 border-t pt-5 border-gray-100">
+                  <div className="mt-4 mb-5 border-t pt-4 border-gray-100">
                     <div className="flex flex-col">
-                      <span className="text-3xl font-black tracking-tighter text-primary">
+                      <span className="text-2xl font-black tracking-tighter text-primary">
                         Rp {item.price}
                       </span>
-                      <span className="text-[10px] font-bold uppercase tracking-widest mt-1 text-text-muted">
+                      <span className="text-[10px] font-bold uppercase tracking-widest mt-0.5 text-text-muted">
                         / Bulan
                       </span>
                     </div>
                   </div>
 
-                  <a href={waLink} target="_blank" rel="noreferrer" className={`mt-6 w-full py-3 px-4 rounded-xl font-bold flex items-center justify-center gap-2 transition-all duration-300 shadow-md ${
+                  <a href={waLink} target="_blank" rel="noreferrer" className={`mt-auto w-full py-2.5 px-3 rounded-lg text-sm font-bold flex items-center justify-center gap-2 transition-all duration-300 shadow-sm ${
                     isBestSeller
                       ? 'bg-primary text-white hover:bg-red-600 hover:shadow-red-500/25 active:scale-95' 
                       : 'bg-white text-primary border-2 border-primary hover:bg-red-50 active:scale-95'
