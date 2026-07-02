@@ -596,11 +596,9 @@ function PackageCarouselRow({ pkgCat, index, waLink, fadeInUp }: any) {
             <p className="text-sm font-bold text-text-main opacity-70">ID Sales: SF-XXXXXX</p>
           </div>
           
-          <div className="w-full max-w-3xl bg-gray-50 border border-gray-100 rounded-2xl p-6 mb-10 text-left">
-            <p className="text-[11px] md:text-xs text-text-muted leading-relaxed">
-              <strong className="text-text-main block mb-2 uppercase tracking-wider">Disclaimer Hukum</strong>
-              Website ini bukan merupakan website resmi dari Telkomsel atau IndiHome (website resmi: telkomsel.com/indihome). Website ini adalah halaman promosi mandiri yang dikelola oleh <b>Ajat Sudrajat</b> selaku Kemitraan Sales Force resmi IndiHome untuk area Kabupaten Tasikmalaya. Semua informasi paket, harga, dan ketentuan sesuai dengan rilis resmi dari Telkomsel IndiHome dan pendaftaran akan diproses langsung ke sistem pusat secara legal dan resmi.
-            </p>
+          <div className="w-full max-w-3xl bg-gray-50 border border-gray-100 rounded-2xl p-6 mb-10 text-left text-[11px] md:text-xs text-text-muted leading-relaxed">
+            <strong className="text-text-main block mb-2 uppercase tracking-wider">Disclaimer Hukum</strong>
+            Website ini bukan merupakan website resmi Telkomsel atau IndiHome (website resmi: <a href="https://telkomsel.com/indihome" target="_blank" rel="noreferrer" className="underline hover:text-primary transition-colors">telkomsel.com/indihome</a>). Website ini merupakan media promosi independen yang dikelola oleh Ajat Sudrajat, selaku Sales Force resmi IndiHome yang melayani wilayah Kabupaten Tasikmalaya. Seluruh informasi mengenai paket, harga, dan ketentuan mengacu pada informasi resmi Telkomsel IndiHome. Setiap pengajuan pemasangan melalui website ini akan diproses secara resmi melalui sistem Telkomsel IndiHome.
           </div>
           
           <div className="w-full max-w-3xl border-t border-gray-100 pt-8 flex flex-col md:flex-row items-center justify-between gap-6">
