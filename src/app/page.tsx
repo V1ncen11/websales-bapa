@@ -4,6 +4,8 @@ import { useState } from "react";
 import { Wifi, Tv, Phone, CheckCircle2, MessageCircle, ShieldCheck, Zap, Clock, Menu, X, ChevronDown, MonitorSmartphone, FileText, Wrench, MapPin } from "lucide-react";
 import { motion } from "framer-motion";
 import Image from "next/image";
+import FomoNotification from "@/components/FomoNotification";
+
 export default function Home() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [openFaq, setOpenFaq] = useState<number | null>(null);
@@ -457,6 +459,52 @@ function PackageCarouselRow({ pkgCat, index, waLink, fadeInUp }: any) {
           </div>
         </div>
       </section>
+
+      {/* Testimoni Section */}
+      <section id="testimoni" className="w-full py-20 px-6 bg-red-50/50">
+        <div className="max-w-6xl mx-auto">
+          <motion.div 
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, margin: "-100px" }}
+            variants={fadeInUp}
+            className="text-center mb-16"
+          >
+            <h2 className="text-3xl md:text-5xl font-bold text-text-main mb-4">Apa Kata Pelanggan?</h2>
+            <p className="text-lg text-text-muted">Ratusan keluarga di Tasikmalaya sudah membuktikan cepatnya pelayanan kami.</p>
+          </motion.div>
+          
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+            {[
+              { name: "Bapak Budi", area: "Indihiang", text: "Mantap Pak Ajat, daftar pagi, sore teknisi langsung datang pasang. Internet ngebut buat anak belajar di rumah!" },
+              { name: "Ibu Siti Aisyah", area: "Cipedes", text: "Pelayanan ramah banget, dibantu pilih paket yang pas buat keluarga. Sukses terus Pak Ajat!" },
+              { name: "A. Supriatna", area: "Kawalu", text: "Harga transparan nggak ada biaya tersembunyi. Proses legal 100% dari pusat. Sales IndiHome Tasikmalaya terpercaya." }
+            ].map((testi, i) => (
+              <motion.div 
+                key={i}
+                initial="hidden"
+                whileInView="visible"
+                viewport={{ once: true, margin: "-100px" }}
+                variants={fadeInUp}
+                className="bg-white p-8 rounded-2xl shadow-sm border border-red-100 flex flex-col relative"
+              >
+                <div className="text-5xl text-red-200 absolute top-4 right-6 font-serif">"</div>
+                <div className="flex items-center gap-4 mb-6">
+                  <div className="w-12 h-12 bg-primary text-white rounded-full flex items-center justify-center font-bold text-xl shrink-0">
+                    {testi.name.charAt(0)}
+                  </div>
+                  <div>
+                    <h4 className="font-bold text-text-main">{testi.name}</h4>
+                    <p className="text-xs text-text-muted flex items-center gap-1"><MapPin size={12}/> {testi.area}</p>
+                  </div>
+                </div>
+                <p className="text-text-muted leading-relaxed italic">{testi.text}</p>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* Cara Daftar Section */}
       <section id="cara-daftar" className="w-full py-20 px-6 bg-white border-t border-gray-50">
         <div className="max-w-6xl mx-auto flex flex-col md:flex-row items-center gap-12 md:gap-20">
@@ -632,6 +680,7 @@ function PackageCarouselRow({ pkgCat, index, waLink, fadeInUp }: any) {
         </div>
       </footer>
 
+      <FomoNotification />
       {/* Floating WhatsApp CTA (Mobile especially) */}
       <a 
         href={waLink} 
