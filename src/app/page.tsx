@@ -589,9 +589,6 @@ function PackageCarouselRow({ pkgCat, index, waLink, fadeInUp }: any) {
         <div className="max-w-5xl mx-auto flex flex-col md:flex-row justify-between gap-12 md:gap-8 mb-12">
           {/* Left: Profile & Contact */}
           <div className="flex flex-col items-center md:items-start flex-1">
-            <div className="w-12 h-12 bg-red-50 text-primary border border-red-100 rounded-full flex items-center justify-center mb-4">
-              <Wifi className="w-6 h-6" />
-            </div>
             <h2 className="text-2xl font-black text-text-main mb-1 tracking-tight">Ajat Sudrajat</h2>
             <p className="text-text-muted font-medium mb-1 text-center md:text-left">Sales Force Resmi Telkomsel IndiHome</p>
             <p className="text-sm font-bold text-text-main opacity-70 mb-8">ID Sales: SF-XXXXXX</p>
