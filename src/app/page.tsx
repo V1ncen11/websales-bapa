@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { Wifi, Tv, Phone, CheckCircle2, MessageCircle, ShieldCheck, Zap, Clock, Menu, X, ChevronDown, MonitorSmartphone, FileText, Wrench } from "lucide-react";
+import { Wifi, Tv, Phone, CheckCircle2, MessageCircle, ShieldCheck, Zap, Clock, Menu, X, ChevronDown, MonitorSmartphone, FileText, Wrench, MapPin } from "lucide-react";
 import { motion } from "framer-motion";
 
 export default function Home() {
@@ -585,35 +585,59 @@ function PackageCarouselRow({ pkgCat, index, waLink, fadeInUp }: any) {
       </section>
 
       {/* Footer */}
-      <footer id="kontak" className="w-full bg-white border-t border-gray-100 py-16 px-6 text-center">
-        <div className="max-w-4xl mx-auto flex flex-col items-center">
-          <div className="w-12 h-12 bg-red-50 text-primary border border-red-100 rounded-full flex items-center justify-center mb-4">
-            <Wifi className="w-6 h-6" />
-          </div>
-          <h2 className="text-2xl font-black text-text-main mb-1 tracking-tight">Ajat Sudrajat</h2>
-          <div className="flex flex-col items-center gap-1 mb-10">
-            <p className="text-text-muted font-medium text-center">Sales Force Resmi Telkomsel IndiHome</p>
-            <p className="text-sm font-bold text-text-main opacity-70">ID Sales: SF-XXXXXX</p>
+      <footer id="kontak" className="w-full bg-white border-t border-gray-100 pt-16 pb-8 px-6 text-center md:text-left">
+        <div className="max-w-5xl mx-auto flex flex-col md:flex-row justify-between gap-12 md:gap-8 mb-12">
+          {/* Left: Profile & Contact */}
+          <div className="flex flex-col items-center md:items-start flex-1">
+            <div className="w-12 h-12 bg-red-50 text-primary border border-red-100 rounded-full flex items-center justify-center mb-4">
+              <Wifi className="w-6 h-6" />
+            </div>
+            <h2 className="text-2xl font-black text-text-main mb-1 tracking-tight">Ajat Sudrajat</h2>
+            <p className="text-text-muted font-medium mb-1 text-center md:text-left">Sales Force Resmi Telkomsel IndiHome</p>
+            <p className="text-sm font-bold text-text-main opacity-70 mb-8">ID Sales: SF-XXXXXX</p>
+            
+            <div className="flex flex-col gap-3 w-full max-w-[280px]">
+              <a href={waLink} target="_blank" rel="noreferrer" className="flex items-center justify-center md:justify-start gap-3 bg-red-50 hover:bg-primary hover:text-white text-primary px-5 py-3.5 rounded-xl transition-all duration-300 group">
+                <MessageCircle size={20} className="group-hover:animate-bounce" />
+                <span className="font-bold">Hubungi WhatsApp</span>
+              </a>
+              <div className="flex items-center justify-center md:justify-start gap-3 bg-gray-50 text-text-main px-5 py-3.5 rounded-xl">
+                <MapPin size={20} className="text-gray-500" />
+                <span className="font-medium text-sm">Kab. Tasikmalaya & Sekitarnya</span>
+              </div>
+            </div>
           </div>
           
-          <div className="w-full max-w-3xl bg-gray-50 border border-gray-100 rounded-2xl p-6 mb-10 text-left text-[11px] md:text-xs text-text-muted leading-relaxed">
-            <strong className="text-text-main block mb-2 uppercase tracking-wider">Disclaimer Hukum</strong>
-            Website ini bukan merupakan website resmi Telkomsel atau IndiHome (website resmi: <a href="https://telkomsel.com/indihome" target="_blank" rel="noreferrer" className="underline hover:text-primary transition-colors">telkomsel.com/indihome</a>). Website ini merupakan media promosi independen yang dikelola oleh Ajat Sudrajat, selaku Sales Force resmi IndiHome yang melayani wilayah Kabupaten Tasikmalaya. Seluruh informasi mengenai paket, harga, dan ketentuan mengacu pada informasi resmi Telkomsel IndiHome. Setiap pengajuan pemasangan melalui website ini akan diproses secara resmi melalui sistem Telkomsel IndiHome.
+          {/* Right: Disclaimer Box & Logo */}
+          <div className="flex-1 md:max-w-lg w-full flex flex-col items-center md:items-end">
+            <div className="w-full bg-gray-50 border border-gray-100 rounded-2xl p-6 text-left text-[11px] text-text-muted leading-relaxed mb-6">
+              <strong className="text-text-main block mb-2 uppercase tracking-wider">Disclaimer Hukum</strong>
+              Website ini bukan merupakan website resmi Telkomsel atau IndiHome (website resmi: <a href="https://telkomsel.com/indihome" target="_blank" rel="noreferrer" className="underline hover:text-primary transition-colors">telkomsel.com/indihome</a>). Website ini merupakan media promosi independen yang dikelola oleh Ajat Sudrajat, selaku Sales Force resmi IndiHome yang melayani wilayah Kabupaten Tasikmalaya. Seluruh informasi mengenai paket, harga, dan ketentuan mengacu pada informasi resmi Telkomsel IndiHome. Setiap pengajuan pemasangan melalui website ini akan diproses secara resmi melalui sistem Telkomsel IndiHome.
+            </div>
+            
+            <div className="flex items-center gap-3 opacity-60 grayscale hover:grayscale-0 transition-all cursor-default">
+              <span className="text-[10px] font-bold text-text-muted uppercase tracking-widest">Layanan Resmi</span>
+              <div className="flex flex-col items-start bg-gray-50 px-2 py-1 rounded">
+                <span className="text-lg font-black text-[#E3000F] tracking-tighter leading-none">IndiHome</span>
+                <span className="text-[8px] font-black text-gray-800 tracking-widest mt-0.5 ml-0.5 uppercase">by Telkomsel</span>
+              </div>
+            </div>
           </div>
-          
-          <div className="w-full max-w-3xl border-t border-gray-100 pt-8 flex flex-col md:flex-row items-center justify-between gap-6">
-             <div className="flex flex-col items-center md:items-start gap-1">
-               <p className="text-xs text-text-muted font-medium tracking-wide">© {new Date().getFullYear()} Ajat Sudrajat - Promosi Sales Force.</p>
-               <p className="text-[10px] text-gray-400">Built by <a href="#" className="font-bold text-gray-500 hover:text-primary transition-colors">K-Serv</a></p>
-             </div>
-             <div className="flex items-center gap-3 opacity-60 grayscale hover:grayscale-0 transition-all">
-                <span className="text-[10px] font-bold text-text-muted uppercase tracking-widest">Layanan Resmi</span>
-                <div className="flex flex-col items-start bg-white px-2 py-1 rounded">
-                  <span className="text-lg font-black text-[#E3000F] tracking-tighter leading-none">IndiHome</span>
-                  <span className="text-[8px] font-black text-gray-800 tracking-widest mt-0.5 ml-0.5 uppercase">by Telkomsel</span>
-                </div>
-             </div>
-          </div>
+        </div>
+
+        {/* Bottom Links & Copyright */}
+        <div className="max-w-5xl mx-auto border-t border-gray-100 pt-8 flex flex-col md:flex-row items-center justify-between gap-6">
+           <div className="flex flex-wrap justify-center md:justify-start gap-4 text-xs font-medium text-gray-500">
+             <a href="#" className="hover:text-primary transition-colors">Privacy Policy</a>
+             <span className="opacity-30">•</span>
+             <a href="#" className="hover:text-primary transition-colors">Disclaimer</a>
+             <span className="opacity-30">•</span>
+             <a href={waLink} target="_blank" rel="noreferrer" className="hover:text-primary transition-colors">Hubungi Saya</a>
+           </div>
+           <div className="flex flex-col items-center md:items-end gap-1 text-center md:text-right">
+             <p className="text-[11px] text-text-muted font-medium tracking-wide">© {new Date().getFullYear()} Ajat Sudrajat. All rights reserved.</p>
+             <p className="text-[10px] text-gray-400">Built by <a href="#" className="font-bold text-gray-500 hover:text-primary transition-colors">K-Serv</a></p>
+           </div>
         </div>
       </footer>
 
