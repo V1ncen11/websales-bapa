@@ -129,45 +129,72 @@ function PackageCarouselRow({ pkgCat, index, waLink, fadeInUp }: any) {
         className="flex overflow-x-auto py-4 -mx-6 px-6 md:mx-0 md:px-0 gap-6 snap-x snap-mandatory scrollbar-hide items-stretch"
         onScroll={handleScroll}
       >
-         {pkgCat.items.map((item: any, i: number) => (
-            <div key={i} className={`min-w-[240px] w-[70vw] md:w-[260px] flex-shrink-0 snap-center rounded-[1.25rem] p-5 border ${index === 0 && i === 1 ? 'border-primary border-2 shadow-lg shadow-red-500/10' : 'border-gray-200 shadow-sm'} bg-white relative flex flex-col hover:shadow-xl transition-all duration-300 h-full`}>
-               {index === 0 && i === 1 && <div className="absolute -top-3 left-1/2 -translate-x-1/2 bg-primary text-white text-[10px] font-bold px-3 py-1 rounded-full uppercase tracking-wider whitespace-nowrap shadow-md">PALING LARIS</div>}
-               
-               {item.note ? (
-                 <span className="bg-red-50 text-primary text-[10px] font-bold px-2.5 py-1 rounded-full w-max mb-5 border border-red-100">{item.note}</span>
-               ) : (
-                 <div className="h-5 mb-5"></div>
-               )}
-               
-               <div className="flex items-center gap-2.5 mb-1.5">
-                 <div className="w-10 h-10 rounded-full bg-red-50 flex items-center justify-center shrink-0">
-                   <Wifi className="text-primary w-5 h-5" />
-                 </div>
-                 <span className="text-3xl font-bold text-text-main tracking-tight">{item.speed}</span>
-               </div>
-               
-               <div className="flex items-center gap-1.5 mt-1 text-text-muted font-medium text-xs">
-                 <MonitorSmartphone size={14} className="text-gray-400" />
-                 <span>Ideal untuk {item.devices}</span>
-               </div>
-               
-               <div className="mt-4 mb-6 border-t border-gray-100 pt-4">
-                 <div className="flex flex-col">
-                   <span className="text-2xl font-extrabold text-primary tracking-tight">Rp {item.price}</span>
-                   <span className="text-[10px] text-text-muted font-bold uppercase tracking-widest mt-0.5">/ Bulan</span>
-                 </div>
-               </div>
+         {pkgCat.items.map((item: any, i: number) => {
+            const isBestSeller = index === 0 && i === 1;
+            return (
+               <div key={i} className={`min-w-[240px] w-[70vw] md:w-[260px] flex-shrink-0 snap-center rounded-[1.5rem] p-6 relative flex flex-col transition-all duration-300 h-full ${
+                 isBestSeller 
+                   ? 'bg-gradient-to-b from-gray-900 to-black text-white shadow-2xl shadow-gray-900/40 md:scale-105 z-10 border border-gray-800' 
+                   : 'bg-white border border-gray-100 shadow-md hover:shadow-xl hover:-translate-y-1'
+               }`}>
+                  {isBestSeller && (
+                    <div className="absolute -top-4 left-1/2 -translate-x-1/2 bg-gradient-to-r from-primary to-red-600 text-white text-[10px] font-black px-4 py-1.5 rounded-full uppercase tracking-widest shadow-lg shadow-red-500/40 whitespace-nowrap">
+                      PALING LARIS
+                    </div>
+                  )}
+                  
+                  {item.note ? (
+                    <span className={`text-[10px] font-bold px-2.5 py-1 rounded-full w-max mb-5 border ${
+                      isBestSeller ? 'bg-white/10 text-white border-white/20' : 'bg-red-50 text-primary border-red-100'
+                    }`}>
+                      {item.note}
+                    </span>
+                  ) : (
+                    <div className="h-5 mb-5"></div>
+                  )}
+                  
+                  <div className="flex items-center gap-3 mb-2">
+                    <div className={`w-11 h-11 rounded-full flex items-center justify-center shrink-0 ${
+                      isBestSeller ? 'bg-white/10' : 'bg-red-50'
+                    }`}>
+                      <Wifi className={`w-5 h-5 ${isBestSeller ? 'text-white' : 'text-primary'}`} />
+                    </div>
+                    <span className={`text-3xl font-black tracking-tight ${isBestSeller ? 'text-white' : 'text-text-main'}`}>
+                      {item.speed}
+                    </span>
+                  </div>
+                  
+                  <div className={`flex items-center gap-2 mt-1 font-medium text-xs ${isBestSeller ? 'text-gray-400' : 'text-text-muted'}`}>
+                    <MonitorSmartphone size={14} className={isBestSeller ? 'text-gray-500' : 'text-gray-400'} />
+                    <span>Ideal untuk {item.devices}</span>
+                  </div>
+                  
+                  <div className={`mt-5 mb-6 border-t pt-5 ${isBestSeller ? 'border-gray-800' : 'border-gray-100'}`}>
+                    <div className="flex flex-col">
+                      <span className={`text-3xl font-black tracking-tighter ${isBestSeller ? 'text-white' : 'text-primary'}`}>
+                        Rp {item.price}
+                      </span>
+                      <span className={`text-[10px] font-bold uppercase tracking-widest mt-1 ${isBestSeller ? 'text-gray-400' : 'text-text-muted'}`}>
+                        / Bulan
+                      </span>
+                    </div>
+                  </div>
 
-               <a 
-                 href={waLink} 
-                 target="_blank" 
-                 rel="noreferrer" 
-                 className={`mt-auto w-full py-3 rounded-xl text-sm font-bold flex justify-center items-center gap-2 transition-colors ${index === 0 && i === 1 ? 'bg-primary text-white hover:bg-primary-dark shadow-md' : 'bg-gray-50 text-text-main hover:bg-primary hover:text-white border border-gray-100 hover:border-primary'}`}
-               >
-                 Pilih {item.speed}
-               </a>
-            </div>
-         ))}
+                  <a 
+                    href={waLink} 
+                    target="_blank" 
+                    rel="noreferrer" 
+                    className={`mt-auto w-full py-3.5 rounded-xl text-sm font-bold flex justify-center items-center gap-2 transition-all ${
+                      isBestSeller 
+                        ? 'bg-primary text-white hover:bg-red-600 shadow-lg shadow-red-500/30' 
+                        : 'bg-red-50 text-primary hover:bg-primary hover:text-white'
+                    }`}
+                  >
+                    Pilih {item.speed}
+                  </a>
+               </div>
+            );
+         })}
       </motion.div>
 
       {/* Mobile Pagination Dots */}
