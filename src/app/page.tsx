@@ -266,28 +266,32 @@ function PackageCarouselRow({ pkgCat, index, waLink, fadeInUp }: any) {
           <span className="text-[16vw] font-black text-black/[0.03] select-none tracking-tighter">INDIHOME</span>
         </div>
 
-        <div 
+        <motion.div 
+          initial="hidden"
+          animate="visible"
+          variants={staggerContainer}
           className="relative z-10 max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between flex-grow w-full px-6 gap-8 md:gap-0"
         >
               
               {/* Left Content */}
               <div className="w-full md:w-1/3 flex flex-col items-center md:items-start text-center md:text-left pt-10 md:pt-0 z-20">
-                <span className="text-xl font-semibold text-text-muted mb-2 tracking-wide">Halo, Saya</span>
-                <h1 className="text-6xl md:text-8xl font-black text-text-main leading-[0.95] mb-8 tracking-tighter">
+                <motion.span variants={fadeInUp} className="text-xl font-semibold text-text-muted mb-2 tracking-wide">Halo, Saya</motion.span>
+                <motion.h1 variants={fadeInUp} className="text-6xl md:text-8xl font-black text-text-main leading-[0.95] mb-8 tracking-tighter">
                   AJAT<br/>SUDRAJAT
-                </h1>
-                <a 
+                </motion.h1>
+                <motion.a 
+                  variants={fadeInUp} 
                   href={waLink} 
                   target="_blank" 
                   rel="noreferrer" 
                   className="inline-flex items-center gap-2 px-8 py-4 bg-primary text-white font-bold text-lg rounded-full hover:bg-primary-dark transition-all shadow-lg hover:shadow-red-500/30"
                 >
                   <MessageCircle size={24} /> Hubungi Saya
-                </a>
+                </motion.a>
               </div>
 
               {/* Center Image (The Cutout) */}
-              <div className="w-full md:w-1/2 lg:w-1/3 h-[350px] md:h-[80%] relative md:absolute bottom-0 md:left-1/2 md:-translate-x-1/2 flex items-end justify-center pointer-events-none z-10 mt-auto md:mt-0">
+              <motion.div variants={fadeInUp} className="w-full md:w-1/2 lg:w-1/3 h-[350px] md:h-[80%] relative md:absolute bottom-0 md:left-1/2 md:-translate-x-1/2 flex items-end justify-center pointer-events-none z-10 mt-auto md:mt-0">
                 <Image 
                   src="/dummy-dad.png" 
                   alt="Ajat Sudrajat" 
@@ -296,11 +300,11 @@ function PackageCarouselRow({ pkgCat, index, waLink, fadeInUp }: any) {
                   priority={true}
                   className="w-auto h-full max-h-[650px] object-cover object-bottom drop-shadow-2xl"
                 />
-              </div>
+              </motion.div>
 
               {/* Right Content - Removed Glass Card for cleaner look */}
               <div className="w-full md:w-1/3 flex flex-col items-center md:items-end text-center md:text-right mt-auto md:mt-0 z-20">
-                <div className="text-center md:text-right">
+                <motion.div variants={fadeInUp} className="text-center md:text-right">
                   <h2 className="text-4xl md:text-5xl font-black text-text-main leading-[1.1] tracking-tighter">
                     SALES FORCE<br/>
                     <span className="text-primary">INDIHOME</span>
@@ -308,10 +312,10 @@ function PackageCarouselRow({ pkgCat, index, waLink, fadeInUp }: any) {
                   <p className="text-text-muted mt-4 font-medium text-lg max-w-[280px] mx-auto md:ml-auto md:mr-0">
                     Melayani pendaftaran & pasang baru WiFi secara resmi dan cepat khusus area <b className="text-primary">Kota & Kabupaten Tasikmalaya</b>.
                   </p>
-                </div>
+                </motion.div>
               </div>
 
-        </div>
+        </motion.div>
       </section>
 
       {/* Profile / Tentang Saya Section */}
