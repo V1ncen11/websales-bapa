@@ -15,7 +15,7 @@ const inter = Inter({
 export const metadata: Metadata = {
   metadataBase: new URL("https://promoindihometasik.web.id"),
   title: "Promo Pasang IndiHome Tasikmalaya | Sales Resmi",
-  description: "Sales Force Resmi IndiHome. Melayani pendaftaran pasang baru WiFi IndiHome area Kabupaten Tasikmalaya. Proses cepat, resmi, dan dibantu sampai nyala.",
+  description: "Sales Force Resmi IndiHome. Melayani pendaftaran pasang baru WiFi IndiHome area Kota & Kabupaten Tasikmalaya. Proses cepat, resmi, dan dibantu sampai nyala.",
   keywords: ["pasang indihome tasikmalaya", "promo indihome tasik", "sales indihome tasikmalaya", "wifi murah tasik", "daftar indihome tasikmalaya", "harga paket indihome"],
   authors: [{ name: "Ajat Sudrajat" }],
   verification: {
@@ -31,7 +31,7 @@ export const metadata: Metadata = {
   },
   openGraph: {
     title: "Promo Pasang IndiHome Tasikmalaya | Sales Resmi",
-    description: "Promo khusus pemasangan baru IndiHome area Tasikmalaya. Proses cepat, data aman, dan dibantu sampai nyala oleh Sales Resmi (Ajat Sudrajat).",
+    description: "Promo khusus pemasangan baru IndiHome area Kota & Kabupaten Tasikmalaya. Proses cepat, data aman, dan dibantu sampai nyala oleh Sales Resmi (Ajat Sudrajat).",
     url: "https://promoindihometasik.web.id",
     siteName: "Promo IndiHome Tasikmalaya",
     images: [

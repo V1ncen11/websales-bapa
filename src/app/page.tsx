@@ -47,7 +47,7 @@ export default function Home() {
     {
       id: "promo-tasikmalaya",
       name: "Promo Area Tasikmalaya",
-      description: "Harga All-In (Sudah termasuk PPN 11% & Admin). Tagihan flat! Khusus Kabupaten Tasikmalaya.",
+      description: "Harga All-In (Sudah termasuk PPN 11% & Admin). Tagihan flat! Khusus Kota & Kabupaten Tasikmalaya.",
       items: [
         { speed: "20 Mbps", price: "205.350", note: "Internet Only", devices: "3-5 Perangkat" },
         { speed: "20 Mbps", price: "249.750", note: "BEST SELLER (+ Kuota 30GB)", devices: "3-5 Perangkat" },
@@ -320,7 +320,7 @@ function PackageCarouselRow({ pkgCat, index, waLink, fadeInUp }: any) {
                     <span className="text-primary">INDIHOME</span>
                   </h2>
                   <p className="text-text-muted mt-4 font-medium text-lg max-w-[280px] mx-auto md:ml-auto md:mr-0">
-                    Melayani pendaftaran & pasang baru WiFi secara resmi dan cepat khusus area <b className="text-primary">Kabupaten Tasikmalaya</b>.
+                    Melayani pendaftaran & pasang baru WiFi secara resmi dan cepat khusus area <b className="text-primary">Kota & Kabupaten Tasikmalaya</b>.
                   </p>
                 </motion.div>
               </div>
@@ -339,7 +339,7 @@ function PackageCarouselRow({ pkgCat, index, waLink, fadeInUp }: any) {
         >
           <h2 className="text-2xl md:text-3xl font-black text-text-main mb-6 tracking-tight">Kredibilitas & Pengalaman</h2>
           <p className="text-text-muted leading-relaxed text-lg md:text-xl">
-            Sebagai <b className="text-text-main">Senior Sales Force IndiHome</b>, saya memiliki pengalaman lebih dari <b className="text-primary">5 Tahun</b> melayani pendaftaran dan pemasangan WiFi baru di area Kabupaten Tasikmalaya dan sekitarnya. Misi saya sederhana: memastikan Anda mendapatkan layanan internet terbaik secara resmi, aman, dan tanpa proses yang berbelit-belit.
+            Sebagai <b className="text-text-main">Senior Sales Force IndiHome</b>, saya memiliki pengalaman lebih dari <b className="text-primary">5 Tahun</b> melayani pendaftaran dan pemasangan WiFi baru di area Kota & Kabupaten Tasikmalaya dan sekitarnya. Misi saya sederhana: memastikan Anda mendapatkan layanan internet terbaik secara resmi, aman, dan tanpa proses yang berbelit-belit.
           </p>
         </motion.div>
       </section>
@@ -376,7 +376,7 @@ function PackageCarouselRow({ pkgCat, index, waLink, fadeInUp }: any) {
                 <span className="text-red-500 font-bold text-base md:text-lg mb-1">* Syarat & Ketentuan Penting</span>
                 <div className="text-text-muted text-sm md:text-base font-medium leading-relaxed">
                   <ul className="space-y-2 list-none">
-                    <li>1. Layanan ini khusus area <b>Kabupaten Tasikmalaya</b>.</li>
+                    <li>1. Layanan ini mencakup area <b>Kota & Kabupaten Tasikmalaya</b>.</li>
                     <li>2. Harga Promo Paket ke-1 <b>SUDAH TERMASUK PPN 11%</b>. Paket lainnya belum termasuk PPN 11%.</li>
                     <li>3. Paket <b>50 Mbps ke atas</b> dikenakan Biaya Pasang Baru (PSB) <b>Rp 99.000</b>.</li>
                     <li>4. Khusus paket <b>20 Mbps</b> wajib <b>Deposit 1x tagihan</b> (uang deposit ini akan jadi gratis tagihan di bulan ke-13).</li>
@@ -613,7 +613,7 @@ function PackageCarouselRow({ pkgCat, index, waLink, fadeInUp }: any) {
           <div className="flex-1 md:max-w-lg w-full flex flex-col items-center md:items-end">
             <div className="w-full bg-gray-50 border border-gray-100 rounded-2xl p-6 text-left text-[11px] text-text-muted leading-relaxed mb-6">
               <strong className="text-text-main block mb-2 uppercase tracking-wider">Disclaimer Hukum</strong>
-              Website ini bukan merupakan website resmi Telkomsel atau IndiHome (website resmi: <a href="https://telkomsel.com/indihome" target="_blank" rel="noreferrer" className="underline hover:text-primary transition-colors">telkomsel.com/indihome</a>). Website ini merupakan media promosi independen yang dikelola oleh Ajat Sudrajat, selaku Sales Force resmi IndiHome yang melayani wilayah Kabupaten Tasikmalaya. Seluruh informasi mengenai paket, harga, dan ketentuan mengacu pada informasi resmi Telkomsel IndiHome. Setiap pengajuan pemasangan melalui website ini akan diproses secara resmi melalui sistem Telkomsel IndiHome.
+              Website ini bukan merupakan website resmi Telkomsel atau IndiHome (website resmi: <a href="https://telkomsel.com/indihome" target="_blank" rel="noreferrer" className="underline hover:text-primary transition-colors">telkomsel.com/indihome</a>). Website ini merupakan media promosi independen yang dikelola oleh Ajat Sudrajat, selaku Sales Force resmi IndiHome yang melayani wilayah Kota & Kabupaten Tasikmalaya. Seluruh informasi mengenai paket, harga, dan ketentuan mengacu pada informasi resmi Telkomsel IndiHome. Setiap pengajuan pemasangan melalui website ini akan diproses secara resmi melalui sistem Telkomsel IndiHome.
             </div>
             
             <div className="flex items-center gap-3 opacity-60 grayscale hover:grayscale-0 transition-all cursor-default">
