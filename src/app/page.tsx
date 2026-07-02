@@ -134,7 +134,7 @@ function PackageCarouselRow({ pkgCat, index, waLink, fadeInUp }: any) {
             return (
                <div key={i} className={`min-w-[240px] w-[70vw] md:w-[260px] flex-shrink-0 snap-center rounded-[1.5rem] p-6 relative flex flex-col transition-all duration-300 h-full ${
                  isBestSeller 
-                   ? 'bg-gradient-to-b from-gray-900 to-black text-white shadow-2xl shadow-gray-900/40 md:scale-105 z-10 border border-gray-800' 
+                   ? 'bg-white border-2 border-primary shadow-xl shadow-red-500/10 md:scale-105 z-10' 
                    : 'bg-white border border-gray-100 shadow-md hover:shadow-xl hover:-translate-y-1'
                }`}>
                   {isBestSeller && (
@@ -144,9 +144,7 @@ function PackageCarouselRow({ pkgCat, index, waLink, fadeInUp }: any) {
                   )}
                   
                   {item.note ? (
-                    <span className={`text-[10px] font-bold px-2.5 py-1 rounded-full w-max mb-5 border ${
-                      isBestSeller ? 'bg-white/10 text-white border-white/20' : 'bg-red-50 text-primary border-red-100'
-                    }`}>
+                    <span className="text-[10px] font-bold px-2.5 py-1 rounded-full w-max mb-5 border bg-red-50 text-primary border-red-100">
                       {item.note}
                     </span>
                   ) : (
@@ -154,27 +152,25 @@ function PackageCarouselRow({ pkgCat, index, waLink, fadeInUp }: any) {
                   )}
                   
                   <div className="flex items-center gap-3 mb-2">
-                    <div className={`w-11 h-11 rounded-full flex items-center justify-center shrink-0 ${
-                      isBestSeller ? 'bg-white/10' : 'bg-red-50'
-                    }`}>
-                      <Wifi className={`w-5 h-5 ${isBestSeller ? 'text-white' : 'text-primary'}`} />
+                    <div className="w-11 h-11 rounded-full flex items-center justify-center shrink-0 bg-red-50">
+                      <Wifi className="w-5 h-5 text-primary" />
                     </div>
-                    <span className={`text-3xl font-black tracking-tight ${isBestSeller ? 'text-white' : 'text-text-main'}`}>
+                    <span className="text-3xl font-black tracking-tight text-text-main">
                       {item.speed}
                     </span>
                   </div>
                   
-                  <div className={`flex items-center gap-2 mt-1 font-medium text-xs ${isBestSeller ? 'text-gray-400' : 'text-text-muted'}`}>
-                    <MonitorSmartphone size={14} className={isBestSeller ? 'text-gray-500' : 'text-gray-400'} />
+                  <div className="flex items-center gap-2 mt-1 font-medium text-xs text-text-muted">
+                    <MonitorSmartphone size={14} className="text-gray-400" />
                     <span>Ideal untuk {item.devices}</span>
                   </div>
                   
-                  <div className={`mt-5 mb-6 border-t pt-5 ${isBestSeller ? 'border-gray-800' : 'border-gray-100'}`}>
+                  <div className="mt-5 mb-6 border-t pt-5 border-gray-100">
                     <div className="flex flex-col">
-                      <span className={`text-3xl font-black tracking-tighter ${isBestSeller ? 'text-white' : 'text-primary'}`}>
+                      <span className="text-3xl font-black tracking-tighter text-primary">
                         Rp {item.price}
                       </span>
-                      <span className={`text-[10px] font-bold uppercase tracking-widest mt-1 ${isBestSeller ? 'text-gray-400' : 'text-text-muted'}`}>
+                      <span className="text-[10px] font-bold uppercase tracking-widest mt-1 text-text-muted">
                         / Bulan
                       </span>
                     </div>
@@ -186,7 +182,7 @@ function PackageCarouselRow({ pkgCat, index, waLink, fadeInUp }: any) {
                     rel="noreferrer" 
                     className={`mt-auto w-full py-3.5 rounded-xl text-sm font-bold flex justify-center items-center gap-2 transition-all ${
                       isBestSeller 
-                        ? 'bg-primary text-white hover:bg-red-600 shadow-lg shadow-red-500/30' 
+                        ? 'bg-primary text-white hover:bg-red-600 shadow-md shadow-red-500/20' 
                         : 'bg-red-50 text-primary hover:bg-primary hover:text-white'
                     }`}
                   >
