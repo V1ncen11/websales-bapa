@@ -18,14 +18,6 @@ export const metadata: Metadata = {
   description: "Sales Force Resmi IndiHome. Melayani pendaftaran pasang baru WiFi IndiHome area Kabupaten Tasikmalaya. Proses cepat, resmi, dan dibantu sampai nyala.",
   keywords: ["pasang indihome tasikmalaya", "promo indihome tasik", "sales indihome tasikmalaya", "wifi murah tasik", "daftar indihome tasikmalaya", "harga paket indihome"],
   authors: [{ name: "Ajat Sudrajat" }],
-  openGraph: {
-    title: "Promo Pasang IndiHome Tasikmalaya | Sales Resmi",
-    description: "Promo khusus pemasangan baru IndiHome area Tasikmalaya. Proses cepat, data aman, dan dibantu sampai nyala oleh Sales Resmi (Ajat Sudrajat).",
-    url: "https://promoindihometasik.web.id",
-    siteName: "Promo IndiHome Tasikmalaya",
-    locale: "id_ID",
-    type: "website",
-  },
   verification: {
     google: "1QiBoWKt4osNNkwpamJwTfbWwPaeCRjD_su5-uBPaGw",
   },
@@ -38,9 +30,9 @@ export const metadata: Metadata = {
     telephone: false,
   },
   openGraph: {
-    title: "Promo Pasang IndiHome Tasikmalaya | Ajat Sudrajat",
-    description: "Daftar IndiHome sekarang! Proses cepat, 100% resmi, dan dibantu sampai WiFi nyala. Promo khusus area Kabupaten Tasikmalaya.",
-    url: "/",
+    title: "Promo Pasang IndiHome Tasikmalaya | Sales Resmi",
+    description: "Promo khusus pemasangan baru IndiHome area Tasikmalaya. Proses cepat, data aman, dan dibantu sampai nyala oleh Sales Resmi (Ajat Sudrajat).",
+    url: "https://promoindihometasik.web.id",
     siteName: "Promo IndiHome Tasikmalaya",
     images: [
       {
