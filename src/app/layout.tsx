@@ -26,6 +26,9 @@ export const metadata: Metadata = {
     locale: "id_ID",
     type: "website",
   },
+  verification: {
+    google: "1QiBoWKt4osNNkwpamJwTfbWwPaeCRjD_su5-uBPaGw",
+  },
   appleWebApp: {
     capable: true,
     statusBarStyle: "default",
